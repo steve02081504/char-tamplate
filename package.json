@@ -1,0 +1,23 @@
+{
+	"name": "char-template",
+	"version": "0.0.0.0",
+	"description": "a simple character template from gentian-aphrodite by steve02081504",
+	"main": "src/start.js",
+	"scripts": {
+		"hooks-install": "git config core.hooksPath .githooks && chmod 700 .githooks/*",
+		"update-data": "node .esh/commands/update-data.mjs",
+		"update-cardfile": "node .esh/commands/update-cardfile.mjs",
+		"run-fixer": "node .esh/commands/run-fixer.mjs",
+		"build": "node .esh/commands/build.mjs"
+	},
+	"author": "steve02081504",
+	"devDependencies": {
+		"crypto-js": "^4.2.0",
+		"png-chunk-text": "^1.0.0",
+		"png-chunks-encode": "^1.0.0",
+		"png-chunks-extract": "^1.0.0",
+		"seedrandom": "^3.0.5",
+		"tiktoken": "^1.0.15",
+		"yaml": "^2.4.1"
+	}
+}
