@@ -1,10 +1,10 @@
-import CardFileInfo from "../../src/cardinfo.mjs";
-import { keyScoreAdder } from "../../src/keyScore.mjs";
-import { get_encoding } from "tiktoken";
+import CardFileInfo from "../../src/cardinfo.mjs"
+import { keyScoreAdder } from "../../src/keyScore.mjs"
+import { get_encoding } from "tiktoken"
 
-var encoder = get_encoding('o200k_base');
+var encoder = get_encoding('o200k_base')
 function simple_marco_remover(str) {
-	return str.replace(/{{\/\/([\s\S]*?)}}/g, '').replace(/\{\{(user|char)\}\}/gi, 'name');
+	return str.replace(/{{\/\/([\s\S]*?)}}/g, '').replace(/\{\{(user|char)\}\}/gi, 'name')
 }
 CardFileInfo.readDataFiles(); keyScoreAdder(CardFileInfo.character_book.entries)
 let charData = CardFileInfo.metaData, enabledWIs = CardFileInfo.character_book.entries.filter(_ => _.enabled)
@@ -26,5 +26,5 @@ let stat = {
 		...enabledWIs.map(_ => _.content),
 	].join('\n')).replace(/\n+/g, '\n')).length
 }
-encoder.free();
-console.dir(stat, { depth: null });
+encoder.free()
+console.dir(stat, { depth: null })
